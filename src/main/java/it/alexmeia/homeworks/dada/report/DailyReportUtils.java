@@ -17,7 +17,7 @@ import com.opencsv.CSVWriter;
 import it.alexmeia.homeworks.dada.report.bo.LogData;
 import it.alexmeia.homeworks.dada.report.bo.ReportRow;
 
-public class DailyReportBuilder {
+public class DailyReportUtils {
 
 	public static void writeReport(File logFile, File reportFile) throws IOException {
 

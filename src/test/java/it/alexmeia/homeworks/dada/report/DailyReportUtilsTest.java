@@ -16,11 +16,11 @@ import org.junit.Test;
 
 import com.opencsv.CSVReader;
 
-import it.alexmeia.homeworks.dada.report.DailyReportBuilder;
+import it.alexmeia.homeworks.dada.report.DailyReportUtils;
 import it.alexmeia.homeworks.dada.report.bo.LogData;
 import it.alexmeia.homeworks.dada.report.bo.ReportRow;
 
-public class DailyReportBuilderTest {
+public class DailyReportUtilsTest {
 
 	private static final String LOGFILE_PATH = "logfiles/requests.log";
 	private static final String REPORT_PATH = "reports/ipaddr.csv";
@@ -37,7 +37,7 @@ public class DailyReportBuilderTest {
 	@Test
 	public void testWriteReport() throws IOException {
 
-		DailyReportBuilder.writeReport(logFile, reportFile);
+		DailyReportUtils.writeReport(logFile, reportFile);
 
 		CSVReader reader = new CSVReader(new FileReader(reportFile), ';');
 		List<String[]> reportRows = reader.readAll();
@@ -53,7 +53,7 @@ public class DailyReportBuilderTest {
 	@Test
 	public void testBuildReportList() throws IOException {
 
-		List<ReportRow> reportRowList = DailyReportBuilder.buildReportList(logFile);
+		List<ReportRow> reportRowList = DailyReportUtils.buildReportList(logFile);
 
 		ReportRow firstRow = reportRowList.get(0);
 		ReportRow rowWithOneRequest = null;
@@ -100,7 +100,7 @@ public class DailyReportBuilderTest {
 		logMap.put("10.0.0.1", new LogData(2500, 6));
 		logMap.put("10.0.0.2", new LogData(2500, 4));
 
-		List<ReportRow> reportRowList = DailyReportBuilder.buildOrderedListWithPercentage(logMap, totalBytes,
+		List<ReportRow> reportRowList = DailyReportUtils.buildOrderedListWithPercentage(logMap, totalBytes,
 				totalRequests);
 
 		assertEquals(2, reportRowList.size());

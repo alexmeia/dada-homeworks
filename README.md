@@ -2,8 +2,10 @@
 # Homeworks for Dada interview.
 
 ## 1. Read log file and create csv report
-Pakcage *it.alexmeia.homeworks.dada.report*
+Main method in *it.alexmeia.homeworks.dada.report.DailyReportApp*
+Unit tests in *it.alexmeia.homeworks.dada.report.DailyReportUtilsTest*
 
 ## 2. Multiply integers without multiply operator and storing values in arrays
-Package *it.alexmeia.homeworks.dada.calculator
+Main method in *it.alexmeia.homeworks.dada.calculator.CalculatorApp*
+Unit tests in *it.alexmeia.homeworks.dada.calculator.CalculatorUtilsTest*
 

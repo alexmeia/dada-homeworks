@@ -17,7 +17,6 @@ public class DailyReportApp {
 
 	public static void main(String[] args) {
 
-		// input and outoput file should be passed as arguments
 		File logFile;
 		File reportFile;
 
@@ -31,7 +30,7 @@ public class DailyReportApp {
 				reportFile = new File(args[1]);
 			}
 
-			DailyReportBuilder.writeReport(logFile, reportFile);
+			DailyReportUtils.writeReport(logFile, reportFile);
 			System.out.println(String.format("Log file %s processed. Report written in %s", logFile.getAbsolutePath(),
 					reportFile.getAbsolutePath()));
 
