@@ -82,11 +82,11 @@ public class DailyReportUtilsTest {
 		}
 
 		assertEquals(4, reportRowList.size());
-		assertFalse("Request with httpstatus different from OK will be written in report file.",
+		assertFalse("Request with http status different from OK will be written in report file.",
 				rowWithStatus404 != null);
 		assertTrue("IP 10.191.255.229 made one request with status OK.", rowWithOneRequest.getRequests() == 1);
 		assertTrue("Maximum requests per IP are 3.", firstRow.getRequests() == 3);
-		assertTrue("Total bytes for i IP with more requests are 1892.", firstRow.getBytes() == 1892);
+		assertTrue("Total bytes for IP with more requests are 1892.", firstRow.getBytes() == 1892);
 		assertTrue("Request percentage for IP with 2 request is 25%",
 				rowWithTwoRequests.getRequestPercentage() == 25.0d);
 	}
